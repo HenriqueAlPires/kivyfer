@@ -1,0 +1,24 @@
+#File name: Novvoapp.py
+#:kivy 1.8.0
+#: import FadeTransition kivy.uix.screenmanager.FadeTransition
+
+ScreenManagement:
+    transition: FadeTransition()
+    MainScreen:
+    AnotherScreen:
+
+
+<MainScreen>:
+    name: "main"
+    Button:
+        on_release: app.root.current = "other"
+        font_size: 50
+        text: "Avancar"
+
+
+<AnotherScreen>:
+    name: "other"
+    Button:
+        on_release: app.root.current = "main"
+        font_size: 50
+        text: "Voltar"

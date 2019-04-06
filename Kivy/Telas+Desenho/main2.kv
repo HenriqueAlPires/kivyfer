@@ -1,0 +1,39 @@
+#: import FadeTransition kivy.uix.screenmanager.FadeTransition
+
+ScreenManagement:
+    transition: FadeTransition()
+    MainScreen:
+    AnotherScreen:
+
+<MainScreen>:
+    name: "main"
+
+    FloatLayout:
+        Painter
+        Button:
+            color: 0,1,0,1
+            size_hint:0.3,0.1
+            font_size: 20
+            text: "Proxima tela"
+            on_release: app.root.current = "other"
+            pos_hint: {"right":1, "top":1}
+
+        Button:
+            color: 0,0,1,1
+            size_hint: 0.2,0.1
+            font_size:20
+            text: "Borracha"
+
+
+<AnotherScreen>:
+    name: "other"
+
+    FloatLayout:
+        Painter
+        Button:
+            color: 0,1,0,1
+            font_size: 20
+            size_hint: 0.3,0.1
+            text: "Tela anterior"
+            on_release: app.root.current = "main"
+            pos_hint: {"right":1, "top":1}

@@ -1,0 +1,33 @@
+TextLabel:
+
+<TextLabel>:
+    text_input: txt_in
+    label_show: lbl_sh
+
+    BoxLayout:
+        orientation: "vertical"
+
+        Label:
+            id: lbl_sh
+            text: ""
+            font_size: 20
+            size_hint_y: .9
+
+        TextInput:
+            id: txt_in
+            size_hint_y: .1
+            text: ""
+
+        BoxLayout:
+            size_hint_y: 0.3
+            Button:
+                text: "Mostrar"
+                on_press: root.txt_to_label()
+
+            Button:
+                text: "Adicionar"
+                on_press: root.add_to_label()
+
+            Button:
+                text: "Limpar"
+                on_press: root.clearall()
